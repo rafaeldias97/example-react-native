@@ -4,7 +4,16 @@ import {View, Text, StyleSheet, Dimensions} from 'react-native';
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 
-const CarouselCardItem = ({item, index}) => {
+interface Props {
+  item: {
+    title: string;
+    body: string;
+    ImageIcon: any;
+  };
+  index: any;
+}
+
+const CarouselCardItem: React.FC<Props> = ({item, index}) => {
   const {ImageIcon} = item;
   return (
     <View style={styles.container} key={index}>
@@ -34,7 +43,6 @@ const styles = StyleSheet.create({
   body: {
     color: '#78746D',
     fontSize: 14,
-    paddingLeft: 20,
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 8,

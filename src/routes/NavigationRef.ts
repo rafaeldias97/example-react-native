@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
+import { NavigationContainerRef } from '@react-navigation/native';
 
-export const navigationRef = React.createRef();
+export const navigationRef = React.createRef<NavigationContainerRef>();
 
-export function navigate(name, params) {
+export const navigate = (name: string, params: any) => {
   navigationRef.current?.navigate(name, params, {
     key: Math.random().toString(),
     onBack: () => this.refresh(),
@@ -11,10 +12,10 @@ export function navigate(name, params) {
   });
 }
 
-export function reset(routes) {
+export const reset = (routes) => {
   navigationRef.current?.reset(routes);
 }
 
-export function goBack() {
+export const goBack = () => {
   navigationRef.current?.goBack();
 }

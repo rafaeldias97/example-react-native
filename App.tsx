@@ -12,8 +12,7 @@ import {
   StatusBar,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {Provider as PaperProvider} from 'react-native-paper';
-import {theme} from './type/default';
+import {theme} from './types/default';
 import Routes from './src/routes';
 import { ThemeProvider } from 'styled-components/native';
 
@@ -28,15 +27,13 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PaperProvider theme={theme}>
-        <SafeAreaView style={backgroundStyle}>
-          <StatusBar
-            backgroundColor={theme.colors.fill.dark.primary}
-            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          />
-          <Routes />
-        </SafeAreaView>
-      </PaperProvider>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          backgroundColor={theme.colors.fill.dark.primary}
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        />
+        <Routes />
+      </SafeAreaView>
     </ThemeProvider>
   );
 };
