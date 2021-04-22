@@ -9,7 +9,7 @@ const useRoute = () => {
       component: SplashTwo,
     },
     {
-      path: 'splashh',
+      path: 'splash2',
       title: 'splash 2',
       component: SplashOne,
     },
